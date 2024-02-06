@@ -1,0 +1,93 @@
+body {
+    font-family: Comic Sans MS, cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Dark background color */
+    color: #fff; /* White text color */
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #323232;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Make the container relative for absolute positioning */
+    overflow: hidden; /* Hide overflow to contain decorative elements */
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: relative; /* Relative positioning for z-index */
+    z-index: 1; /* Ensure profile content stays above decorative elements */
+}
+
+.profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.languages {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+}
+
+.languages img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.category {
+    margin-top: 20px;
+    position: relative; /* Relative positioning for absolute decorations */
+}
+
+.category h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Animation for shapes */
+@keyframes move {
+    0% { transform: translateY(-50vh) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+/* Cyan circle */
+.decoration::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: cyan;
+    border-radius: 50%;
+}
+
+/* Pink triangle */
+.decoration::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid pink;
+}
+
+/* JavaScript will dynamically generate shapes with different positions and styles */
